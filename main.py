@@ -18,16 +18,11 @@ try:
         print("I am happy thanks for asking")
 
     elif reply == "go to google":
-        from googlesearch import search 
-except ImportError:  
-    print("No module named 'google' found") 
-  
-# to search 
-query = input()
-  
-for j in search(query, tld="co.in", num=10, stop=1, pause=2): 
-    print(j) 
-    
+ import urllib.request
+ webUrl  = urllib.request.urlopen('https://www.google.com/search?q=python&rlz=1CABASQ_enUS940&oq=python&aqs=chrome.0.69i59j35i39j0i433i512j69i60l2j69i61j69i60l2.2305j0j7&sourceid=chrome&ie=UTF-8&safe=active&ssui=on')
+ print ("result code: " + str(webUrl.getcode()))  
+ data = webUrl.read()
+ print(data)
 
 except:
      raise Exception("I do not get it")
